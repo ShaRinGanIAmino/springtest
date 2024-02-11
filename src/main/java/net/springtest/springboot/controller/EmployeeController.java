@@ -30,7 +30,7 @@ public class EmployeeController {
             Employee supervisor = employeeRepository.findById(employee.getSupervisorId())
                     .orElseThrow(() -> new ResourceNotFoundException("Supervisor with id : "+employee.getSupervisorId()+"is not found !"));
         }
-        Employee savedEmployee = employeeRepository.save(employee);
+        employeeRepository.save(employee);
         return employeeRepository.save(employee);
     }
 
